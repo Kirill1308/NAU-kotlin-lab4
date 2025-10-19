@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simplified representation of Ukrainian coat of arms (tryzub/trident) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/ukraine_yellow"/>
+    <stroke
+        android:width="4dp"
+        android:color="@color/ukraine_blue"/>
+    <size
+        android:width="100dp"
+        android:height="100dp"/>
+</shape>

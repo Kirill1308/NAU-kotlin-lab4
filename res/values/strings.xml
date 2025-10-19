@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default language: Ukrainian -->
+    <string name="app_name">Lab 4 - Ресурси і Локалізація</string>
+    <string name="surname">Попов</string>
+    <string name="full_name">Попов Кирил Олександрович</string>
+    <string name="greeting">Вітаємо</string>
+    <string name="country">Україна</string>
+    <string name="flag">Прапор України</string>
+    <string name="coat_of_arms">Герб України</string>
+</resources>

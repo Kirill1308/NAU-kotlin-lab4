@@ -1,14 +1,57 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+/**
+ * Lab 4: Android Resources and Localization
+ * Author: Попов Кирил Олександрович
+ * 
+ * This program demonstrates:
+ * 1. Creating custom styles for text display
+ * 2. Creating drawable XML resources with graphic figures
+ * 3. Implementing localization (Ukrainian/English)
+ * 4. Displaying national symbols (flag and coat of arms)
+ */
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+fun main() {
+    println("===========================================")
+    println("Lab 4: Ресурси і Локалізація в Android")
+    println("===========================================\n")
+    
+    // Demonstrate Ukrainian localization (default)
+    println(">>> UKRAINIAN VERSION (Default)")
+    val ukrainianResources = ResourceManager("uk")
+    ukrainianResources.displayResources()
+    
+    println("\n>>> DRAWABLE RESOURCES")
+    ukrainianResources.listDrawables()
+    
+    // Demonstrate English localization
+    println("\n\n>>> ENGLISH VERSION")
+    val englishResources = ResourceManager("en")
+    englishResources.displayResources()
+    
+    println("\n>>> DRAWABLE RESOURCES")
+    englishResources.listDrawables()
+    
+    // Display information about styles
+    println("\n\n>>> AVAILABLE STYLES (from styles.xml)")
+    println("  1. SurnameTextStyle - For displaying surname")
+    println("     - textSize: 24sp")
+    println("     - textColor: primary_text (#212121)")
+    println("     - textStyle: bold")
+    println("     - padding: 16dp")
+    println("     - gravity: center")
+    
+    println("\n  2. GreetingTextStyle - For greeting messages")
+    println("     - textSize: 18sp")
+    println("     - textColor: secondary_text (#757575)")
+    println("     - textStyle: normal")
+    println("     - padding: 8dp")
+    
+    println("\n  3. SymbolTextStyle - For flag/emblem descriptions")
+    println("     - textSize: 16sp")
+    println("     - textColor: accent_color (#FF4081)")
+    println("     - textStyle: italic")
+    println("     - padding: 12dp")
+    
+    println("\n===========================================")
+    println("All requirements completed successfully!")
+    println("===========================================")
 }
