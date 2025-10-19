@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- English language -->
+    <string name="app_name">Lab 4 - Resources and Localization</string>
+    <string name="surname">Popov</string>
+    <string name="full_name">Popov Kyrylo Oleksandrovych</string>
+    <string name="greeting">Welcome</string>
+    <string name="country">Ukraine</string>
+    <string name="flag">Flag of Ukraine</string>
+    <string name="coat_of_arms">Coat of Arms of Ukraine</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ukrainian flag colors -->
+    <color name="ukraine_blue">#0057B7</color>
+    <color name="ukraine_yellow">#FFD700</color>
+    
+    <!-- Text colors -->
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="accent_color">#FF4081</color>
+    
+    <!-- Background colors -->
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_dark">#303030</color>
+</resources>
