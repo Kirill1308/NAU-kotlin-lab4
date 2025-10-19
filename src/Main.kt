@@ -16,7 +16,7 @@ fun main() {
     
     // Demonstrate Ukrainian localization (default)
     println(">>> UKRAINIAN VERSION (Default)")
-    val ukrainianResources = ResourceManager("uk")
+    val ukrainianResources = ResourceManager(ResourceManager.LOCALE_UKRAINIAN)
     ukrainianResources.displayResources()
     
     println("\n>>> DRAWABLE RESOURCES")
@@ -24,7 +24,7 @@ fun main() {
     
     // Demonstrate English localization
     println("\n\n>>> ENGLISH VERSION")
-    val englishResources = ResourceManager("en")
+    val englishResources = ResourceManager(ResourceManager.LOCALE_ENGLISH)
     englishResources.displayResources()
     
     println("\n>>> DRAWABLE RESOURCES")

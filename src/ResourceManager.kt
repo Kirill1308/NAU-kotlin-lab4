@@ -7,9 +7,14 @@ import javax.xml.parsers.DocumentBuilderFactory
  * ResourceManager - A utility class to load and manage Android-like resources
  * This demonstrates resource loading and localization concepts from Android
  */
-class ResourceManager(private val locale: String = "uk") {
+class ResourceManager(private val locale: String = LOCALE_UKRAINIAN) {
     
-    private val resourcesPath = "res"
+    companion object {
+        const val LOCALE_UKRAINIAN = "uk"
+        const val LOCALE_ENGLISH = "en"
+        private const val RESOURCES_PATH = "res"
+    }
+    
     private val strings = mutableMapOf<String, String>()
     private val colors = mutableMapOf<String, String>()
     
@@ -23,8 +28,8 @@ class ResourceManager(private val locale: String = "uk") {
      */
     private fun loadStrings() {
         val stringsFile = when (locale) {
-            "en" -> File("$resourcesPath/values-en/strings.xml")
-            else -> File("$resourcesPath/values/strings.xml")
+            LOCALE_ENGLISH -> File("$RESOURCES_PATH/values-en/strings.xml")
+            else -> File("$RESOURCES_PATH/values/strings.xml")
         }
         
         if (stringsFile.exists()) {
@@ -44,7 +49,7 @@ class ResourceManager(private val locale: String = "uk") {
      * Load color resources
      */
     private fun loadColors() {
-        val colorsFile = File("$resourcesPath/values/colors.xml")
+        val colorsFile = File("$RESOURCES_PATH/values/colors.xml")
         
         if (colorsFile.exists()) {
             val doc = parseXml(colorsFile)
@@ -63,9 +68,13 @@ class ResourceManager(private val locale: String = "uk") {
      * Parse XML file
      */
     private fun parseXml(file: File): Document {
-        val factory = DocumentBuilderFactory.newInstance()
-        val builder = factory.newDocumentBuilder()
-        return builder.parse(file)
+        return try {
+            val factory = DocumentBuilderFactory.newInstance()
+            val builder = factory.newDocumentBuilder()
+            builder.parse(file)
+        } catch (e: Exception) {
+            throw IllegalStateException("Failed to parse XML file: ${file.name}", e)
+        }
     }
     
     /**
@@ -105,7 +114,7 @@ class ResourceManager(private val locale: String = "uk") {
         println("   Represented by: coat_of_arms_shape.xml")
         
         println("\n----------------------------------------")
-        println("Locale: ${if (locale == "en") "English" else "Українська"}")
+        println("Locale: ${if (locale == LOCALE_ENGLISH) "English" else "Українська"}")
         println("----------------------------------------\n")
     }
     
@@ -114,7 +123,7 @@ class ResourceManager(private val locale: String = "uk") {
      */
     fun listDrawables() {
         println("Available Drawable Resources:")
-        val drawableDir = File("$resourcesPath/drawable")
+        val drawableDir = File("$RESOURCES_PATH/drawable")
         if (drawableDir.exists()) {
             drawableDir.listFiles()?.forEach { file ->
                 if (file.extension == "xml") {
